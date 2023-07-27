@@ -86,10 +86,14 @@ finally:
 
 ## Version History
 
-- 1.4.0
-    - Fixed issue with using the library in a multithreading environment
-- 1.3.0
+
+- 1.5.[0-2]
+    - Restructured the project
+    - Fixed the issue to using the library
+    - Updated the documentation regarding the changes
+- 1.[3-5].0
     - Initial release
+    - Fixed issue with using the library in a multithreading environment
 
 ## License
 
