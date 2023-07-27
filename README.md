@@ -84,6 +84,13 @@ finally:
 - Selenium
 - BeautifulSoup4
 
+## Version History
+
+- 1.4.0
+    - Fixed issue with using the library in a multithreading environment
+- 1.3.0
+    - Initial release
+
 ## License
 
 This project is licensed under the MIT License.
