@@ -88,7 +88,7 @@ finally:
 
 ## Version History
 
-- 1.5.6
+- 1.6.0
     - Added a translation memory feature. The class now stores previously translated texts in the database, reducing redundant requests to DeepL and speeding up translations for repeated texts.
 - 1.5.[0-2]
     - Restructured the project
