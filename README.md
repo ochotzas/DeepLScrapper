@@ -46,16 +46,16 @@ translator = DeepLScrapper(rate_limit_delay=5)
 
 try:
     # Translate text from English to German
-    translation = translator.translate('Hello, World!', source_lang='en', target_lang='el')
+    translation = translator.translate('Hello, World!', source_lang='en', target_lang='de')
     print("Translation 1:", translation)
 
     # Translate the same text again to test caching
-    translation_cached = translator.translate('Hello, World!', source_lang='en', target_lang='el')
+    translation_cached = translator.translate('Hello, World!', source_lang='en', target_lang='de')
     print("Translation 2 (Cached):", translation_cached)
 
     # Translate multiple texts in bulk
     texts = ['How are you?', 'Goodbye!', 'Welcome back.']
-    bulk_translations = translator.translate(texts, source_lang='en', target_lang='fr')
+    bulk_translations = translator.translate(texts, source_lang='en', target_lang='el')
     print("Bulk Translations:", bulk_translations)
 
     # Test language validation with an invalid language code
@@ -83,15 +83,18 @@ finally:
 
 - Selenium
 - BeautifulSoup4
+- fake_useragent
+- sqlite3
 
 ## Version History
 
-
+- 1.5.6
+    - Added a translation memory feature. The class now stores previously translated texts in the database, reducing redundant requests to DeepL and speeding up translations for repeated texts.
 - 1.5.[0-2]
     - Restructured the project
     - Fixed the issue to using the library
     - Updated the documentation regarding the changes
-- 1.[3-5].0
+- 1.[1-4].0
     - Initial release
     - Fixed issue with using the library in a multithreading environment
 
