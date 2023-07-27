@@ -12,6 +12,7 @@ setup(
     install_requires=[
         'selenium',
         'beautifulsoup4',
+        'fake-useragent'
     ],
     python_requires='>=3.9',
     license='MIT',
