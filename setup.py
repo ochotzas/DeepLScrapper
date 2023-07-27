@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='DeepLScrapper',
-    version='1.4.0',
+    version='1.5.0',
     description='An unofficial Python library for translating text using DeepL',
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
