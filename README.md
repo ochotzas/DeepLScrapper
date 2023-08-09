@@ -16,15 +16,27 @@ The goal of DeepLScrapper is to leverage web scraping techniques using Selenium 
 
 ### Key features
 
-- No API Limits: DeepLScrapper does not rely on the official DeepL API, enabling users to perform unlimited text translations without encountering rate limits or usage restrictions.
+- Unlimited Translations: DeepLScrapper offers unlimited text translations without relying on the official DeepL API, avoiding rate limits or usage restrictions.
 
-- Translation Flexibility: The library supports both single text translation and bulk translation of multiple texts, making it suitable for various use cases and applications.
+- Translation Versatility: This library accommodates both single text and bulk translation needs, catering to a wide range of use cases and applications.
 
-- Caching Mechanism: DeepLScrapper incorporates a caching mechanism to store previously translated texts, reducing redundant requests and improving translation efficiency.
+- Efficient Caching: DeepLScrapper employs an intelligent caching mechanism that stores past translations, reducing redundant requests and enhancing overall translation efficiency.
 
-- Customizable Rate Limiting: Users can customize the rate limit delay between retry attempts in case of rate-limiting errors from the DeepL website.
+- Custom Rate Limiting: Users have the freedom to set their preferred rate limit delay between retry attempts, providing flexibility in handling rate-limiting errors from the DeepL website.
 
-- User-Agent Randomization: The library generates a random User-Agent for browser emulation using the "fake_useragent" library, ensuring a diverse and realistic browser footprint.
+- Diverse User-Agent: The library generates a random User-Agent using the "fake_useragent" library, ensuring a diverse and realistic browser identity for seamless interaction with the DeepL website.
+
+- Multi-Threading Support: DeepLScrapper supports multi-threading, enabling parallel translation of multiple texts for faster and more efficient processing.
+
+- Comprehensive Error Handling: The library offers robust error handling, managing rate-limiting errors and providing informative error messages for easy troubleshooting.
+
+- Database Integration: The integrated SQLite database facilitates efficient storage and retrieval of translations, enhancing performance and data management.
+
+- Headless Browser Automation: Utilizing a headless Chrome browser via Selenium WebDriver, DeepLScrapper ensures a seamless and automated translation process.
+
+- Customizable Configuration: Users can customize caching settings, database paths, and more to tailor the library to their specific requirements.
+
+- Language Support: DeepLScrapper supports translation between various languages, providing a comprehensive language repertoire for diverse translation needs.
 
 By offering a versatile and unrestricted translation solution, DeepLScrapper provides developers with a powerful tool to integrate high-volume and frequent text translations into their applications without the limitations of the official DeepL API. However, it's important to keep in mind that the library should be used responsibly and in compliance with the DeepL website's terms of service and policies.
 
@@ -42,7 +54,7 @@ pip install DeepLScrapper
 from DeepLScrapper import DeepLScrapper
 
 # Initialize the translator with a custom rate limit delay of 5 seconds
-translator = DeepLScrapper(rate_limit_delay=5)
+translator = DeepLScrapper(rate_limit_delay=5, enable_caching=True, max_cache_size=100, multi_threading=True)
 
 try:
     # Translate text from English to German
@@ -88,6 +100,9 @@ finally:
 
 ## Version History
 
+- 1.7.0
+    - Added a multi-threading feature. The class now supports multiple threads for faster translations.
+    - Added caching enabled/disabled option and a maximum cache size option.
 - 1.6.0
     - Added a translation memory feature. The class now stores previously translated texts in the database, reducing redundant requests to DeepL and speeding up translations for repeated texts.
 - 1.5.[0-2]
