@@ -50,6 +50,10 @@ pip install DeepLScrapper
 
 ## Usage
 
+### Use DeepLScrapper in your project
+
+To use DeepLScrapper in your project, import the library and initialize the translator object. You can then use the translator object to perform text translations.
+
 ```python
 from DeepLScrapper import DeepLScrapper
 
@@ -91,25 +95,46 @@ finally:
     translator.close()
 ```
 
+### Use the DeepLWebApp using an interactive CLI interface
+
+DeepLScrapper comes with a built-in CLI interface that allows you to interact with the library using a command-line interface. You can use the CLI interface to perform text translations [1], manage the database [2], and configure the library settings [3] ([2-3]: soon to be implemented).
+
+```python
+from DeepLScrapper import DeepLWebApp
+
+# Initialize the DeepLWebApp
+app = DeepLWebApp(10, True, 100, True)
+
+# Run the DeepLWebApp
+app.start_server()
+```
+
+You can then access the CLI interface by navigating to http://localhost:5000/ in your browser.
+
+
+Demo preview of the CLI interface:
+
+![DeepLWebApp Demo](https://i.ibb.co/H24xsRd/Screen-Recording-2023-08-19-at-5-31-49-PM.gif)
+
 ## Dependencies
 
 - Selenium
 - BeautifulSoup4
 - fake_useragent
 - sqlite3
+- Flask
 
 ## Version History
 
-- 1.7.0
+- 1.8.0
+  - Added DeepLWebApp class for an interactive CLI interface to the library.
+- 1.[1-7].0
     - Added a multi-threading feature. The class now supports multiple threads for faster translations.
     - Added caching enabled/disabled option and a maximum cache size option.
-- 1.6.0
     - Added a translation memory feature. The class now stores previously translated texts in the database, reducing redundant requests to DeepL and speeding up translations for repeated texts.
-- 1.5.[0-2]
     - Restructured the project
     - Fixed the issue to using the library
     - Updated the documentation regarding the changes
-- 1.[1-4].0
     - Initial release
     - Fixed issue with using the library in a multithreading environment
 

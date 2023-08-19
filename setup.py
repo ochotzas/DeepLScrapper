@@ -2,18 +2,20 @@ from setuptools import setup, find_packages
 
 setup(
     name='DeepLScrapper',
-    version='1.7.0',
+    version='1.8.0',
     description='An unofficial Python library for translating text using DeepL',
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
     author='Olger Chotza',
     author_email='olgerdev@icloud.com',
+    url='https://github.com/ochotzas/',
     packages=find_packages(),
     install_requires=[
         'selenium',
         'beautifulsoup4',
         'fake-useragent',
-        'sqlite3'
+        'sqlite3',
+        'flask'
     ],
     python_requires='>=3.9',
     license='MIT',
